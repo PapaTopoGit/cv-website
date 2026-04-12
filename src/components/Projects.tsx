@@ -48,7 +48,7 @@ export default function Projects({ data }: ProjectsProps) {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 xl:grid-cols-4 gap-6"
         >
           {data.map((item, index) => (
             <motion.div
@@ -56,9 +56,9 @@ export default function Projects({ data }: ProjectsProps) {
               variants={itemVariants}
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              className="glass-card overflow-hidden group"
+              className="glass-card overflow-hidden group flex flex-col"
             >
-              <div className="p-8">
+              <div className="p-6 flex-1 flex flex-col">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-14 h-14 text-4xl flex items-center justify-center bg-white/5 rounded-xl group-hover:scale-110 transition-transform duration-300">
                     {item.emoji}
@@ -73,12 +73,12 @@ export default function Projects({ data }: ProjectsProps) {
                   </motion.div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-white/90 mb-2">{item.title}</h3>
-                <p className="text-sm text-white/40 mb-4">{item.date}</p>
+                <h3 className="text-lg font-bold text-white/90 mb-1 leading-tight">{item.title}</h3>
+                <p className="text-xs text-white/40 mb-3">{item.date}</p>
                 
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 flex-1">
                   {item.highlights.map((highlight, i) => (
-                    <li key={i} className="text-sm text-white/60 pl-3 relative">
+                    <li key={i} className="text-xs text-white/60 pl-3 relative leading-relaxed">
                       <span className="absolute left-0 text-violet-400">•</span>
                       {highlight}
                     </li>

@@ -131,6 +131,18 @@ export const cvData = {
         "Built a dashboard integrating live crypto and stock market data.",
         "Utilized local LLMs and backend automation scripts."
       ]
+    },
+    {
+      title: "Job Scan Automation",
+      date: "Coding Project",
+      emoji: "🤖",
+      highlights: [
+        "Automated job alert monitoring via IMAP email scanning (2-hour intervals).",
+        "Smart filtering for target cities (Munich, Milan, Frankfurt) and priority sectors (VC, PE, Consulting, Banking, Fintech, Startups).",
+        "Multi-tier alert system via Telegram with color-coded priority indicators (🟢 🔵 🟡).",
+        "Auto-generated application tracking with keyword matching and structured output storage.",
+        "Tech stack: Python, Himalaya CLI, cron scheduling, Telegram Bot API."
+      ]
     }
   ],
 
