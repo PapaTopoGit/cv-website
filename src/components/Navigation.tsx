@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { BarChart3 } from 'lucide-react';
 
 const navItems = [
   { name: 'About', href: '#about' },
@@ -10,6 +11,10 @@ const navItems = [
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
   { name: 'Contact', href: '#contact' },
+];
+
+const externalLinks = [
+  { name: 'Dashboard', href: 'https://alex-dashboard-teal.vercel.app/' },
 ];
 
 export default function Navigation() {
@@ -42,7 +47,7 @@ export default function Navigation() {
           AM.
         </motion.a>
         
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden md:flex gap-8 items-center">
           {navItems.map((item, index) => (
             <motion.li
               key={item.name}
@@ -60,6 +65,23 @@ export default function Navigation() {
               </motion.a>
             </motion.li>
           ))}
+          
+          <motion.li
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: navItems.length * 0.1 }}
+          >
+            <motion.a
+              href="https://alex-dashboard-teal.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm px-4 py-2 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-500/30 text-white/90 hover:text-white hover:border-violet-500/50 transition-all"
+              whileHover={{ y: -2, scale: 1.05 }}
+            >
+              <BarChart3 size={16} />
+              Dashboard
+            </motion.a>
+          </motion.li>
         </ul>
       </div>
     </motion.nav>

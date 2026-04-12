@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Download, BarChart3 } from 'lucide-react';
 import Image from 'next/image';
 
 interface HeroProps {
@@ -72,7 +72,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex gap-4 justify-center"
+          className="flex gap-4 justify-center flex-wrap"
         >
           <motion.a
             href="#experience"
@@ -90,6 +90,41 @@ export default function Hero({ data }: HeroProps) {
             whileTap={{ scale: 0.95 }}
           >
             Get in Touch
+          </motion.a>
+          
+          <motion.a
+            href="/CV_Alexander_Maus.pdf"
+            download
+            className="glass-card px-8 py-3 text-sm font-medium border-cyan-500/30 text-cyan-300 flex items-center gap-2"
+            whileHover={{ scale: 1.05, y: -2, borderColor: 'rgba(34, 211, 238, 0.5)' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Download size={16} />
+            Download CV
+          </motion.a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-8"
+        >
+          <motion.a
+            href="https://alex-dashboard-teal.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-violet-600/20 to-cyan-600/20 border border-violet-500/30 hover:border-violet-500/50 transition-all group"
+            whileHover={{ scale: 1.03, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <div className="p-2 rounded-lg bg-violet-500/20">
+              <BarChart3 size={20} className="text-violet-300" />
+            </div>
+            <div className="text-left">
+              <p className="text-xs text-white/50">Live Trading Dashboard</p>
+              <p className="text-sm font-medium text-white/90 group-hover:text-white transition-colors">alex-dashboard-teal.vercel.app →</p>
+            </div>
           </motion.a>
         </motion.div>
       </motion.div>
