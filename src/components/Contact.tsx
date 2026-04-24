@@ -53,17 +53,7 @@ export default function Contact({ data }: ContactProps) {
               <span className="text-white/90 font-medium">{data.email}</span>
             </motion.a>
 
-            <motion.a
-              href={`tel:${data.phone}`}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="glass-card p-6 flex flex-col items-center gap-4 group"
-            >
-              <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                <Phone size={24} className="text-cyan-400" />
-              </div>
-              <span className="text-white/70 text-sm">Phone</span>
-              <span className="text-white/90 font-medium">{data.phone}</span>
-            </motion.a>
+
 
             <motion.div
               whileHover={{ scale: 1.02, y: -4 }}

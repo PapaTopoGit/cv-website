@@ -4,7 +4,7 @@ export const cvData = {
     title: "Management Engineer & Tech Enthusiast",
     tagline: "Bridging business strategy, finance, and AI-driven technology.",
     email: "mailalex.m@gmx.de",
-    phone: "+49 176 78995808",
+
     location: "Munich / Milan / Berlin",
     about: [
       "I'm a Management Engineering M.Sc. student at Politecnico di Milano with a specialization in Finance, building on a strong foundation in Industrial Engineering from TU Berlin.",
