@@ -19,9 +19,9 @@ export default function Hero({ data }: HeroProps) {
         initial={{ opacity: 0, scale: 0.8, x: -50 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="absolute top-24 left-6 md:left-12 lg:left-16"
+        className="absolute top-20 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0 lg:left-16"
       >
-        <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-violet-500/30 shadow-2xl shadow-violet-500/20">
+        <div className="relative w-24 h-24 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-violet-500/30 shadow-2xl shadow-violet-500/20">
           <Image
             src="/profile.png"
             alt={data.name}
@@ -42,7 +42,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
         >
           Hi, I'm {''}
           <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
@@ -54,7 +54,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-xl md:text-2xl text-white/60 mb-4"
+          className="text-lg md:text-2xl text-white/60 mb-4"
         >
           {data.title}
         </motion.p>
@@ -63,7 +63,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-base md:text-lg text-white/40 max-w-xl mx-auto mb-12"
+          className="text-sm md:text-lg text-white/40 max-w-xl mx-auto mb-8 md:mb-12"
         >
           {data.tagline}
         </motion.p>
@@ -72,7 +72,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex gap-4 justify-center flex-wrap"
+          className="flex gap-3 justify-center flex-wrap"
         >
           <motion.a
             href="#experience"

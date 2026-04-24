@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { BarChart3 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BarChart3, Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'About', href: '#about' },
@@ -14,12 +14,9 @@ const navItems = [
   { name: 'CV', href: '#cv' },
 ];
 
-const externalLinks = [
-  { name: 'Dashboard', href: 'https://alex-dashboard-teal.vercel.app/' },
-];
-
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +25,8 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = () => setMenuOpen(false);
 
   return (
     <motion.nav
@@ -48,6 +47,7 @@ export default function Navigation() {
           AM.
         </motion.a>
         
+        {/* Desktop nav */}
         <ul className="hidden md:flex gap-8 items-center">
           {navItems.map((item, index) => (
             <motion.li
@@ -84,7 +84,55 @@ export default function Navigation() {
             </motion.a>
           </motion.li>
         </ul>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden text-white/70 hover:text-white transition-colors p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-black/90 backdrop-blur-lg border-t border-white/5"
+          >
+            <ul className="flex flex-col items-center gap-6 py-8">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={handleNavClick}
+                    className="text-lg text-white/70 hover:text-white transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="https://alex-dashboard-teal.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleNavClick}
+                  className="flex items-center gap-2 text-sm px-4 py-2 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-500/30 text-white/90"
+                >
+                  <BarChart3 size={16} />
+                  Dashboard
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }
