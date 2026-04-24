@@ -11,6 +11,7 @@ const navItems = [
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
   { name: 'Contact', href: '#contact' },
+  { name: 'CV', href: '#cv' },
 ];
 
 const externalLinks = [

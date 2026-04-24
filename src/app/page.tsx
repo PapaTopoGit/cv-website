@@ -10,6 +10,7 @@ import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import Navigation from '@/components/Navigation';
+import CVSection from '@/components/CVSection';
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <Projects data={cvData.projects} />
         <Skills data={cvData.skills} />
         <Contact data={cvData.profile} />
+        <CVSection />
       </motion.div>
       
       <footer className="py-8 text-center text-sm text-white/30">
