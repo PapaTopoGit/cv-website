@@ -3,12 +3,11 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 
 interface ContactProps {
   data: {
     email: string;
-    phone: string;
     location: string;
   };
 }
@@ -40,7 +39,7 @@ export default function Contact({ data }: ContactProps) {
             I'm always open to discussing new opportunities, tech projects, or finance collaborations.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <motion.a
               href={`mailto:${data.email}`}
               whileHover={{ scale: 1.02, y: -4 }}
